@@ -1,0 +1,15 @@
+
+
+Ola tudo bem, só passei para dar um recadinho.
+
+O audio que eu usei no exercicio é superior a 25 mbs e o github não permitiu-me fazer upload do mesmo, mas vou ensinar como converter um audio mp3 para wav:
+
+1- entre no site https://cloudconvert.com/mp3-to-wav;
+
+2- Coverta o audio mp3 em wav , faça o download;
+
+3- Abra o java e o nosso file;
+
+4- coloque o nome do arquivo nesse caso o audio dentro do file ex:File file = new File("nome do arquivo do audio");
+
+5- kkkk é tudo , continuação de optimos estudos, beijo! 
