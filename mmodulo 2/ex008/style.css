@@ -1,0 +1,23 @@
+.p:hover{
+    color: coral;
+}
+.p > h2{
+    display:none;
+}
+
+.p:hover > h2 {
+    display: block;
+}
+
+#ok > h2{
+    display: none;
+}
+
+#ok:hover > h2{
+    display: block;
+}
+#ok:hover{
+    color: cornflowerblue;
+
+}
+

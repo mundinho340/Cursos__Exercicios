@@ -1,0 +1,30 @@
+body{
+    background-color: #A3A1A8;
+}
+
+
+#pp{
+    background-color: crimson;
+    color: #FFF587;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.base{
+    color: #FFF587;
+    text-align: center;
+}
+
+.medio{
+    text-align: center;
+    color:#FF665A ; 
+}
+
+.super{
+    text-align: center;
+    color:#7D6B7D ;
+}
+
+.destaque{
+    background-color: rgba(255, 184, 30, 0.5);
+}
