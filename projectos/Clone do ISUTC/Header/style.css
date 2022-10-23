@@ -1,0 +1,124 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.todos1{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.todos{
+    padding-top:0px ;
+    width: 400px;
+    padding-bottom: 20px;
+   padding-right: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.isutc-logo{
+    padding-left:30px ;
+    width: 200px;
+    height: 75px;
+
+}
+.texto{
+    font-size: 13px;
+    font-family: sans-serif;
+    color: var(--indigo);
+    font-weight: bold;
+}
+
+.fenix{
+    width: 40%;
+    
+}
+
+.pesquisa{
+    font-weight: bold;
+    width: 30px;
+    height: 25px;
+}
+
+.nav-barra{
+    color: white;
+    background-color:var(--gray-dark) ;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    box-shadow: 10px 10px 1px black ;
+}
+
+.menu{
+    font-family: var(--font-family-monospace);
+    padding-right:70px ;
+    align-items: center;
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+   
+}
+
+.slide{
+    width: 90%;
+    height:300px;
+}
+
+
+
+.rodape img{
+
+    width: 81px;
+    height: 70px;
+}
+.rodape div{
+    width: 319px;
+    height: 118;
+}
+.rodape{
+    color: gray;
+    justify-content: space-between;
+    height: 166px;
+    width: 800px;
+    padding: 0px 100px 0px 350px;
+    display: flex;
+    align-items: center;
+}

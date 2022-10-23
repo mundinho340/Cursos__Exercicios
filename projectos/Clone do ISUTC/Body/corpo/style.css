@@ -1,0 +1,37 @@
+body{
+    font-weight: 400;
+    line-height: 1.5;
+
+}
+.corpo h1 {
+    padding: 80px;
+    color: rgb(54, 76, 144);
+    text-align: center;
+}
+.corpo{
+    background-color: gainsboro;
+    
+}
+
+.bloco1 div{
+    width: 313.06px;
+    height: 294.66px;
+}
+
+.bloco1 img{
+    width: 313.06px;
+    height: 294.66px;
+}
+
+.bloco1 h2{
+    padding-bottom: -50px;
+}
+
+.bloco1{
+    display: flex;
+    width: 884px;
+    height: 313.06px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
