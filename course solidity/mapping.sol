@@ -1,4 +1,4 @@
-//Hello guys my name is Krypthon, so yha
+//Hello guys my name is Krypthon, so yha , away
 
 // SPDX-License-Indentifier: MIT
 pragma solidity ^0.8.8;
