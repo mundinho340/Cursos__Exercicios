@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.8.8+commit.dddeac2f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "favoriteNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "people",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "retrieve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "store",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"curso-Solidity/testes.sol": "meuContrato"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"curso-Solidity/SimpleStorage.sol": {
+			"keccak256": "0x5a68a00b77c667c4dbe97db363cc8ad0d0a0e125de463f814d925b38665b997f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dbd5885c2d3e0b9e3660fc9da904485de991a7e7ea5e81911e44d476f5c6d40e",
+				"dweb:/ipfs/QmeVQ6huKmneM7MFZtC8jb31uCBcWiDdp1kxW7zyj9TRcY"
+			]
+		},
+		"curso-Solidity/testes.sol": {
+			"keccak256": "0x19f3a335a0a86d9cf358294a17efed406e76b8ac02421a9ec2a94ce7897330f9",
+			"urls": [
+				"bzz-raw://78dcbd294b9ad6e18712a8e5fad063dbaa11387156ca97c3d9b4e72ad2954d47",
+				"dweb:/ipfs/QmW6A6BxkwR9VS2eeBpZjGbe3Rvog4BK7pDwmiQDURoVWN"
+			]
+		}
+	},
+	"version": 1
+}

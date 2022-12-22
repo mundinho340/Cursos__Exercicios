@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.8+commit.dddeac2f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "found",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minimumUSD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"curso-Solidity1/Foundme.sol": "Foundme"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"curso-Solidity1/Foundme.sol": {
+			"keccak256": "0x876aeec4026532f752446385eaa92a5440b29cd09308e9a3c28b42f995ed6bad",
+			"urls": [
+				"bzz-raw://f6a2e3f55f5116eb04c0c8e9e91b8f6ebb77b511517a254c7256bffc46728f99",
+				"dweb:/ipfs/QmYWCRG7QEjXvbQwYCFmCV5cHH6zzbXck5bdgNkJ7jNc7J"
+			]
+		}
+	},
+	"version": 1
+}
