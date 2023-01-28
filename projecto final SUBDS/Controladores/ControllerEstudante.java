@@ -21,17 +21,16 @@ public class ControllerEstudante {
 	
 	static Scanner brain=new Scanner(System.in);
 	
-	public static void adicionarEstudante(int codigo,String nome, String sobrenome,String telefone, String sexo) throws SQLException{
+	public static void adicionarEstudante(String nome, String sobrenome,String telefone,String endereco, String sexo) throws SQLException{
 		Conexao conexao=new Conexao();
 		Connection cone= conexao.conectar();
 		
 		PreparedStatement insercao=null;
-		insercao = cone.prepareStatement("insert into aluno values(?,?,?,?,?)");
-		
-		insercao.setInt(1, codigo);
-		insercao.setString(2, nome);
-		insercao.setString(3, sobrenome);
-		insercao.setString(4, telefone);
+		insercao = cone.prepareStatement("insert into aluno (nome, sobrenome, telefone, endereco, sexo) values(?,?,?,?,?)");
+		insercao.setString(1, nome);
+		insercao.setString(2, sobrenome);
+		insercao.setString(3, telefone);
+		insercao.setString(4, endereco);
 		insercao.setString(5, sexo);
 		insercao.executeUpdate();
 		cone.close();
@@ -49,17 +48,18 @@ public class ControllerEstudante {
 		
 		PreparedStatement selecao=null;
 		
-		selecao=cone.prepareStatement("select * from estudante");
+		selecao=cone.prepareStatement("select * from aluno");
 		ResultSet registros= (ResultSet) selecao.executeQuery();
 		while(registros.next()){
-			int codigo=registros.getInt(1);
+			int codigo= registros.getInt(1);
 			String nome=registros.getString(2);
 			String sobrenome=registros.getString(3);
 			String telefone=registros.getString(4);
-			String sexo = registros.getString(5);
+			String endereco = registros.getString(5);
+			String sexo = registros.getString(6);
 			
 			
-			estudantes.add(new Estudante(codigo,nome,sobrenome,telefone, sexo));
+			estudantes.add(new Estudante(codigo,nome,sobrenome,telefone,endereco, sexo));
 		}
 			return estudantes;
 		
@@ -67,19 +67,20 @@ public class ControllerEstudante {
 	
 
 	
-	public static void actualizar(String nome, String sobrenome, String telefone, String sexo) throws SQLException{
+	public static void actualizar(String nome, String sobrenome, String telefone,String endereco, String sexo) throws SQLException{
 		
 
 		Conexao conexao=new Conexao();
 		Connection cone= conexao.conectar();
 		
 		PreparedStatement actualizar=null;
-		actualizar=cone.prepareStatement("update estudante set nome=?,sobrenome=?,telefone=?,sexo=?  where nome=?");
+		actualizar=cone.prepareStatement("update aluno set nome=?,sobrenome=?,telefone=?,endereco=? sexo=?  where nome=?");
 		
 		actualizar.setString(1, nome);
 		actualizar.setString(2, sobrenome);
 		actualizar.setString(3, telefone);
-		actualizar.setString(4, sexo);
+		actualizar.setString(4, endereco);
+		actualizar.setString(5, sexo);
 		//actualizar.setInt(5, codigo);
 		actualizar.executeUpdate();
 	}
@@ -88,7 +89,7 @@ public class ControllerEstudante {
 		Connection cone= conexao.conectar();
 		
 		PreparedStatement remover=null;
-		remover=cone.prepareStatement("delete from estudante where nome=?");
+		remover=cone.prepareStatement("delete from aluno where nome=?");
 		
 		remover.setString(1, nome);
 		remover.executeUpdate();
