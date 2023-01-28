@@ -7,6 +7,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,6 +24,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
+
+import javax.swing.JRadioButton;
 
 public class zye extends JFrame implements ActionListener,MouseListener {
 
@@ -101,18 +104,29 @@ public class zye extends JFrame implements ActionListener,MouseListener {
 		lblSexo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblSexo.setBounds(66, 266, 46, 14);
 		contentPane.add(lblSexo);
+
+		JLabel lblEndereo = new JLabel("Endere\u00E7o");
+		lblEndereo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEndereo.setBounds(66, 213, 72, 14);
+		contentPane.add(lblEndereo);
 		
-		JCheckBox chckbxMas = new JCheckBox("Masculino");
-		chckbxMas.setBounds(194, 264, 97, 23);
-		contentPane.add(chckbxMas);
-		chckbxMas.setFocusable(false);
+		textEndereco = new JTextField();
+		textEndereco.setColumns(10);
+		textEndereco.setBounds(196, 212, 315, 20);
+		contentPane.add(textEndereco);
 		
-		JCheckBox chckbxFemenino = new JCheckBox("Femenino");
-		chckbxFemenino.setBounds(414, 264, 97, 23);
-		contentPane.add(chckbxFemenino);
-		chckbxFemenino.setFocusable(true);
+		JRadioButton rdbtnMasculino = new JRadioButton("Masculino");
+		rdbtnMasculino.setBounds(194, 264, 109, 23);
+		contentPane.add(rdbtnMasculino);
 		
+		JRadioButton rdbtnFemenino = new JRadioButton("Femenino");
+		rdbtnFemenino.setBounds(414, 264, 109, 23);
+		contentPane.add(rdbtnFemenino);
 		btnAdicionar = new JButton("Adicionar");
+		
+		ButtonGroup btngroup = new ButtonGroup();
+		btngroup.add(rdbtnFemenino);
+		btngroup.add(rdbtnMasculino);
 		
 		btnAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -121,7 +135,7 @@ public class zye extends JFrame implements ActionListener,MouseListener {
 				String endereco=textEndereco.getText();
 				String telefone=textTelefone.getText();				
 				String sexo ;
-				if(chckbxFemenino.isSelected()==true){
+				if(rdbtnFemenino.isSelected()==true){
 					sexo="Femenino";
 				}
 				else{
@@ -147,21 +161,12 @@ public class zye extends JFrame implements ActionListener,MouseListener {
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				limparCampos();
-				System.out.println(chckbxFemenino.isSelected());
+				System.out.println(rdbtnFemenino.isSelected());
 			}
 		});
 		btnListar.setBounds(414, 327, 120, 31);
 		contentPane.add(btnListar);
 		
-		JLabel lblEndereo = new JLabel("Endere\u00E7o");
-		lblEndereo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEndereo.setBounds(66, 213, 72, 14);
-		contentPane.add(lblEndereo);
-		
-		textEndereco = new JTextField();
-		textEndereco.setColumns(10);
-		textEndereco.setBounds(196, 212, 315, 20);
-		contentPane.add(textEndereco);
 	}
 	
 	public void limparCampos(){
@@ -238,7 +243,4 @@ public class zye extends JFrame implements ActionListener,MouseListener {
 	public void setTextEndereco(JTextField textEndereco) {
 		this.textEndereco = textEndereco;
 	}
-	
-	
-	
 }
