@@ -3,8 +3,9 @@ public class Estudante {
 
 	 private int codigo;
 	 private String nome,sobrenome,telefone,sexo,endereco; 
-	 public Estudante ( int codigo, String nome, String sobrenome,
+	 public Estudante (int codigo,  String nome, String sobrenome,
 				String telefone,String endereco,String sexo){
+		 	this.codigo=codigo;
 			this.nome = nome;
 			this.sobrenome = sobrenome;
 			this.telefone = telefone;
@@ -12,9 +13,9 @@ public class Estudante {
 			this.endereco = endereco;
 			
 	 }
-	public Estudante(int codigo, String nome, String sobrenome,
-			String telefone, String sexo) {
-		this.codigo = codigo;
+	public Estudante(String nome, String sobrenome,
+			String telefone, String endereco,String sexo) {
+		
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
