@@ -38,16 +38,10 @@ public class ControllerEstudante {
 	}
 	
 	public static ArrayList<Estudante> listaDeEstudantes() throws SQLException{
-		
-		
-		
 		ArrayList<Estudante> estudantes=new ArrayList<Estudante>();
-		
 		Conexao conexao=new Conexao();
 		Connection cone= conexao.conectar();
-		
 		PreparedStatement selecao=null;
-		
 		selecao=cone.prepareStatement("select * from aluno");
 		ResultSet registros= (ResultSet) selecao.executeQuery();
 		while(registros.next()){
@@ -57,13 +51,31 @@ public class ControllerEstudante {
 			String telefone=registros.getString(4);
 			String endereco = registros.getString(5);
 			String sexo = registros.getString(6);
-			
-			
 			estudantes.add(new Estudante(codigo,nome,sobrenome,telefone,endereco, sexo));
 		}
-			return estudantes;
+			return estudante;
 		
 	}
+	public static ArrayList<Estudante> FoundEstudante() throws SQLException{
+		ArrayList<Estudante> estudantes = new ArrayList<Estudante>();
+		Conexao conexao = new Conexao();
+		Connection cone=conexao.conectar();
+		PreparedStatement search= null;
+		search= cone.prepareStatement("select * from aluno where nome=?");
+		ResultSet registro= (ResultSet) search.executeQuery();
+		while(registro.next()){
+			int codigo= registro.getInt(1);
+			String nome=registro.getString(2);
+			String sobrenome=registro.getString(3);
+			String telefone=registro.getString(4);
+			String endereco = registro.getString(5);
+			String sexo = registro.getString(6);
+			estudantes.add(new Estudante(codigo,nome,sobrenome,telefone,endereco, sexo));
+		}
+		return estudantes;
+		
+	}
+	
 	
 
 	
@@ -74,7 +86,7 @@ public class ControllerEstudante {
 		Connection cone= conexao.conectar();
 		
 		PreparedStatement actualizar=null;
-		actualizar=cone.prepareStatement("update aluno set nome=?,sobrenome=?,telefone=?,endereco=? sexo=?  where nome=?");
+		actualizar=cone.prepareStatement("update aluno set nome=?,sobrenome=?,telefone=?,endereco=? sexo=?  where id=?");
 		
 		actualizar.setString(1, nome);
 		actualizar.setString(2, sobrenome);
@@ -84,6 +96,8 @@ public class ControllerEstudante {
 		//actualizar.setInt(5, codigo);
 		actualizar.executeUpdate();
 	}
+
+	
 	public static void apagar(String nome) throws SQLException{
 		Conexao conexao=new Conexao();
 		Connection cone= conexao.conectar();
@@ -94,5 +108,6 @@ public class ControllerEstudante {
 		remover.setString(1, nome);
 		remover.executeUpdate();
 	}
+	
 	
 }
