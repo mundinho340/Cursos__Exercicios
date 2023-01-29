@@ -63,7 +63,7 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 	 */
 	public Home() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 831, 489);
+		setBounds(100, 100, 1025, 489);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -100,7 +100,7 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 			new Object[][] {
 			},
 			new String[] {
-				"Codigo", "Nome", "sobrenome", "telefone", "Endereço","sexo"
+				"Codigo", "Nome", "sobrenome", "telefone", "EndereÃ§o","sexo"
 			}
 		));
 		scrollPane.setViewportView(listagem);
@@ -109,7 +109,8 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 		JButton btnAtualizar = new JButton("Atualizar");
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JOptionPane.showMessageDialog(null, "Estudante atulizado com sucesso.");
+
 			}
 		});
 		btnAtualizar.setBounds(609, 258, 136, 31);
@@ -133,7 +134,7 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 		contentPane.add(btnApagae);
 		
 		textNome = new JTextField();
-		textNome.setBounds(29, 64, 192, 20);
+		textNome.setBounds(200, 64, 192, 20);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
@@ -147,6 +148,20 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 		});
 		btnNovoEstudante.setBounds(609, 188, 136, 31);
 		contentPane.add(btnNovoEstudante);
+		
+		JLabel lblPesquisarNome = new JLabel("Pesquisar Nome");
+		lblPesquisarNome.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblPesquisarNome.setBounds(27, 62, 136, 24);
+		contentPane.add(lblPesquisarNome);
+		
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				searchEstudante();
+			}
+		});
+		btnPesquisar.setBounds(440, 62, 101, 24);
+		contentPane.add(btnPesquisar);
 		//listagem.addMouseListener(this);
 	
 
@@ -190,9 +205,46 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 			e.printStackTrace();
 		}
 	}
+	public static void searchEstudante(){
+		DefaultTableModel listar=(DefaultTableModel) listagem.getModel();
+		try {
+			ArrayList<Estudante> estudantes=ControllerEstudante.FoundEstudante();
+			for(Estudante estudante: estudantes){
+				listar.addRow(new Object[]{
+						estudante.getCodigo(), 
+						estudante.getNome(),
+						estudante.getSobrenome(),
+						estudante.getTelefone(),
+						estudante.getEndereco(),
+						estudante.getSexo()
+						
+				});
+			}
+		} catch (SQLException e) {
+			System.out.println("Erro listar estudante");
+			JOptionPane.showMessageDialog(null, "Erro ao procurar estudante "+e.toString());
+			e.printStackTrace();
+		}
+	}
 	
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	public void mouseClicked(MouseEvent e) {
+		if(listagem.getSelectedRow()!=-1){
+			int indice= listagem.getSelectedRow();
+			TableModel modelo= listagem.getModel();
+			panel.getTextNome();
+			panel.getTextSobrenome();
+			panel.getTextTelefone();
+			panel.getTextEndereco();
+			
+		
+			
+		}
 		
 	}
 
@@ -214,11 +266,7 @@ public class Home extends JFrame implements ActionListener,MouseListener {
 		
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
