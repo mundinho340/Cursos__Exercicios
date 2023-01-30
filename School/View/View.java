@@ -36,13 +36,21 @@ import Entidade.Estudante;
 
 public class View extends JFrame implements ActionListener,MouseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtCodigo;
+	JRadioButton rdbtnFemenino ;
 	private JTextField txtNome;
-	private JTextField txtTeste1;
-	private JTextField txtTeste2;
+	JRadioButton rdbtnMasculino;
+	private JTextField textSobrenome, textEndereco;
+	private JTextField textTelefone;
+	String sexo;
 	private JTable listagem;
 	JButton btnAdicionar, btnListar, btnActualizar,  btnRemover;
+	//private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -74,74 +82,84 @@ public class View extends JFrame implements ActionListener,MouseListener {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Dados do Estudante", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel.setBounds(31, 0, 496, 203);
+		panel.setBounds(29, 11, 442, 360);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblCodigo = new JLabel("Codigo");
-		lblCodigo.setBounds(22, 21, 46, 14);
+		lblCodigo.setBounds(336, 14, 46, 14);
 		panel.add(lblCodigo);
 		
 		JLabel Nome = new JLabel("Nome");
-		Nome.setBounds(22, 46, 46, 14);
+		Nome.setBounds(22, 19, 58, 28);
 		panel.add(Nome);
 		
-		JLabel lblTeste = new JLabel("Teste 1");
-		lblTeste.setBounds(22, 71, 46, 14);
+		JLabel lblTeste = new JLabel("Sobrenome");
+		lblTeste.setBounds(22, 73, 58, 14);
 		panel.add(lblTeste);
 		
-		JLabel lblTeste_1 = new JLabel("Teste 2");
-		lblTeste_1.setBounds(22, 131, 46, 14);
+		JLabel lblTeste_1 = new JLabel("Telefone");
+		lblTeste_1.setBounds(22, 117, 46, 14);
 		panel.add(lblTeste_1);
 		
 		txtCodigo = new JTextField();
-		txtCodigo.setBounds(78, 18, 86, 20);
+		txtCodigo.setBounds(392, 11, 40, 20);
 		panel.add(txtCodigo);
 		txtCodigo.setColumns(10);
 		
 		txtNome = new JTextField();
 		txtNome.setColumns(10);
-		txtNome.setBounds(78, 43, 184, 20);
+		txtNome.setBounds(90, 23, 232, 20);
 		panel.add(txtNome);
 		
-		txtTeste1 = new JTextField();
-		txtTeste1.setColumns(10);
-		txtTeste1.setBounds(78, 68, 86, 20);
-		panel.add(txtTeste1);
+		textSobrenome = new JTextField();
+		textSobrenome.setColumns(10);
+		textSobrenome.setBounds(90, 70, 232, 20);
+		panel.add(textSobrenome);
 		
-		txtTeste2 = new JTextField();
-		txtTeste2.setColumns(10);
-		txtTeste2.setBounds(78, 128, 165, 17);
-		panel.add(txtTeste2);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Operacoes", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(537, 0, 289, 378);
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
-		
-		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setBounds(10, 23, 176, 33);
-		panel_1.add(btnAdicionar);
-		btnAdicionar.addActionListener(this);
-		
-		btnListar = new JButton("Listar");
-		btnListar.setBounds(10, 89, 176, 33);
-		panel_1.add(btnListar);
-		btnListar.addActionListener(this);
-		
-		btnActualizar = new JButton("Actualizar");
-		btnActualizar.setBounds(10, 159, 176, 33);
-		panel_1.add(btnActualizar);
-		btnActualizar.addActionListener(this);
+		textTelefone = new JTextField();
+		textTelefone.setColumns(10);
+		textTelefone.setBounds(90, 114, 232, 20);
+		panel.add(textTelefone);
 		
 		btnRemover = new JButton("Remover");
-		btnRemover.setBounds(10, 220, 176, 33);
-		panel_1.add(btnRemover);
+		btnRemover.setBounds(10, 276, 85, 33);
+		panel.add(btnRemover);
+		
+		btnActualizar = new JButton("Actualizar");
+		btnActualizar.setBounds(105, 276, 85, 33);
+		panel.add(btnActualizar);
+		
+		btnListar = new JButton("Listar");
+		btnListar.setBounds(200, 276, 85, 33);
+		panel.add(btnListar);
+		
+		btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.setBounds(331, 276, 101, 33);
+		panel.add(btnAdicionar);
+		
+		JLabel lblEndereco = new JLabel("Endereco");
+		lblEndereco.setBounds(22, 156, 46, 14);
+		panel.add(lblEndereco);
+		
+		textEndereco = new JTextField();
+		textEndereco.setBounds(90, 153, 232, 20);
+		panel.add(textEndereco);
+		textEndereco.setColumns(10);
+		
+		rdbtnMasculino = new JRadioButton("Masculino");
+		rdbtnMasculino.setBounds(81, 194, 109, 23);
+		panel.add(rdbtnMasculino);
+		rdbtnFemenino = new JRadioButton("Femenino");
+		rdbtnFemenino.setBounds(221, 194, 109, 23);
+		panel.add(rdbtnFemenino);
+		btnAdicionar.addActionListener(this);
+		btnListar.addActionListener(this);
+		btnActualizar.addActionListener(this);
 		btnRemover.addActionListener(this);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(31, 203, 496, 175);
+		scrollPane.setBounds(534, 11, 435, 404);
 		contentPane.add(scrollPane);
 		
 		listagem = new JTable();
@@ -149,7 +167,7 @@ public class View extends JFrame implements ActionListener,MouseListener {
 			new Object[][] {
 			},
 			new String[] {
-				"Codigo", "Nome", "Teste 1", "Teste 2", "Media", "Situacao"
+				"Codigo", "Nome", "Sobrenome", "Telefone", "Endereço", "Sexo"
 			}
 		));
 		scrollPane.setViewportView(listagem);
@@ -164,8 +182,8 @@ public class View extends JFrame implements ActionListener,MouseListener {
 	public void limparCaixas(){
 		txtCodigo.setText("");
 		txtNome.setText("");
-		txtTeste1.setText("");
-		txtTeste2.setText("");
+		textSobrenome.setText("");
+		textTelefone.setText("");
 		
 	}
 	
@@ -183,10 +201,11 @@ public class View extends JFrame implements ActionListener,MouseListener {
 				listar.addRow(new Object[]{
 						estudante.getCodigo(),
 						estudante.getNome(),
-						estudante.getNota1(),
-						estudante.getNota2(),
-						estudante.calculaMedia(),
-						estudante.verificarSituacao(estudante.calculaMedia())
+						estudante.getSobrenome(),
+						estudante.getTelefone(),
+						estudante.getEndereco(),
+						estudante.getSexo(),
+				
 						
 				});
 			}
@@ -198,13 +217,21 @@ public class View extends JFrame implements ActionListener,MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource()==btnAdicionar){
-			int codigo=Integer.parseInt(txtCodigo.getText());
+			//int codigo=Integer.parseInt(txtCodigo.getText());
 			String nome=txtNome.getText();
-			double teste1=Double.parseDouble(txtTeste1.getText());
-			double teste2=Double.parseDouble(txtTeste2.getText());
+			String sobrenome =textSobrenome.getText();
+			String telefone = textTelefone.getText();
+			String endereco = textEndereco.getText();
+			System.out.println("yha");
+			if(rdbtnFemenino.isSelected()==true){
+				sexo="Femenino";
+			}
+			else{
+				sexo="masculino";
+			}
 			
 			try {
-				ControllerEstudante.adicionarEstudante(codigo, nome, teste1, teste2);
+				ControllerEstudante.adicionarEstudante(nome, sobrenome, telefone, endereco, sexo);
 				JOptionPane.showMessageDialog(null, "adicionado com sucesso");
 				limparCaixas();
 			} catch (SQLException e1) {
@@ -220,11 +247,12 @@ public class View extends JFrame implements ActionListener,MouseListener {
 		if(e.getSource()==btnActualizar){
 			int codigo=Integer.parseInt(txtCodigo.getText());
 			String nome=txtNome.getText();
-			double teste1=Double.parseDouble(txtTeste1.getText());
-			double teste2=Double.parseDouble(txtTeste2.getText());
+			String sobrenome = textSobrenome.getText();
+			String telefone = textTelefone.getText();
+			String endereco= textEndereco.getText();
 			
 			try {
-				ControllerEstudante.actualizar(codigo, nome, teste1, teste2);
+				ControllerEstudante.actualizar(codigo, nome, sobrenome, telefone, endereco, sexo);
 				JOptionPane.showMessageDialog(null, "atualizado com sucesso");
 				limparCaixas();
 				limparTabela();
@@ -256,8 +284,8 @@ public class View extends JFrame implements ActionListener,MouseListener {
 			TableModel modelo= listagem.getModel();
 			txtCodigo.setText(modelo.getValueAt(indice, 0).toString());
 			txtNome.setText(modelo.getValueAt(indice, 1).toString());
-			txtTeste1.setText(modelo.getValueAt(indice, 2).toString());
-			txtTeste2.setText(modelo.getValueAt(indice, 3).toString());
+			textSobrenome.setText(modelo.getValueAt(indice, 2).toString());
+			textTelefone.setText(modelo.getValueAt(indice, 3).toString());
 			
 		}
 		
