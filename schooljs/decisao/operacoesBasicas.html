@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="prompt">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operacoes basicas</title>
+</head>
+<body>
+    <h3>Operacoes basicas</h3>
+    <script>
+        var a= parseInt(window.prompt('Digite o valor de A'))
+        var b=parseInt(window.prompt('Digite o vlor de B'))
+        var op= window.prompt('Digite o valor do operador aritimetrico').charAt(0)
+        switch(op){
+            case '+':
+                document.write('<br> Soma de '+a+' E '+b+' Eh '+(a+b)+'</br>')
+                break;
+                case '-':
+                    document.write('<br> Subtracao de '+a+' E '+b+' Eh '+(a-b)+'</br>')
+                    break
+                case '*':
+                    document.write('<br> multipliccao de '+a+' E '+b+'Eh'+(a*b))
+                    case '/':
+                    document.write('<br> divisao de '+a+' E '+b+' Eh '+(a/b))
+                    break
+                    default:
+                        document.write("Operador invalido")
+                        break
+        }
+    </script>
+</body>
+</html>

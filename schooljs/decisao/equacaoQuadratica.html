@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equação Quadratica</title>
+</head>
+<body>
+    <h1>Equacao Quadratica</h1>
+    <script>
+        let a = parseInt(window.prompt("Digite o vlor de A"))
+        let b = parseInt(window.prompt("Digite o valor de B"))
+        let c = parseInt(window.prompt("Digite o valor de C"))
+
+        let delta = b*b-4*a*c
+        if(delta> 0){
+            alert("DELTA RAIZES REAIS DIFERENTES")
+            document.write("Duas Raizes Diferentes <BR>")
+            let x1=(-b+Math.sqrt(delta))/2*a
+            let x2=(-b-Math.sqrt(delta))/2*a
+            document.write('valor de A: '+a+"<br>")
+            document.write('valor de B: '+b+'<br>')
+            document.write('valor de C: '+c+'<br>')
+            document.write('valor de delta: '+delta+'<br>')
+            document.write('valor de x1: '+x1+'<br>')
+            document.write('valor de x2: '+x2+'<br>')
+        }else if(delta ==0){
+            alert("RAIZES REAIS DIFERENTES")
+            document.write("Nao Raizes Reais <BR>")
+            let x1=(-b+Math.sqrt(delta))/2*a
+            let x2=(-b-Math.sqrt(delta))/2*a
+            document.write('valor de A: '+a+"<br>")
+            document.write('valor de B: '+b+'<br>')
+            document.write('valor de C: '+c+'<br>')
+            document.write('valor de delta: '+delta+'<br>')
+            document.write('valor de x1: '+x1+'<br>')
+            document.write('valor de x2: '+x2+'<br>')
+        }
+        else{
+            alert("Raizes nao tem reais")
+            document.write("Raizes nao tem reais")
+            let x1=(-b+Math.sqrt(delta))/2*a
+            let x2=(-b-Math.sqrt(delta))/2*a
+            document.write('valor de A: '+a+"<br>")
+            document.write('valor de B: '+b+'<br>')
+            document.write('valor de C: '+c+'<br>')
+            document.write('valor de delta: '+delta+'<br>')
+            document.write('valor de x1: '+x1+'<br>')
+            document.write('valor de x2: '+x2+'<br>')
+        }
+        
+    </script>
+</body>
+</html>
