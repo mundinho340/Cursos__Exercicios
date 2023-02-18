@@ -1,0 +1,13 @@
+m = float(input('metro: m'))
+dm = m*10
+cm = m*100
+mm = m*1000
+dam= m/10
+hm = m/100
+km = m/1000
+print m,'m =', dm,'dm'
+print m,'m =', cm,'cm'
+print m,'m =', mm,'mm'
+print m,'m =', dam,'dam'
+print m,'m =', hm,'hm'
+print m,'m =', km,'km'
